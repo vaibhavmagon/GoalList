@@ -1,0 +1,99 @@
+<div class="span12">
+ <div class="row">
+	<div class="hero-unit">
+		<div class="row-fluid">
+			<div class="span8">
+
+			<% if current_user %>
+      <h1 style="font-family: 'MerriweatherBold', Serif;"/> DASH BOARD </h1>
+      <br>
+      <% if root %>
+      <%= link_to "Manage users!", users_path , :class => "btn btn-warning"  %> | 
+      <% end %>
+      <%= link_to "Create milestones!", new_post_path ,:class => "btn btn-warning" %> | 
+      
+      <%= link_to "Edit Profile", edit_user_path(current_user),:class => "btn btn-warning" %> |
+      
+       <%= link_to "Delete Profile", current_user, :confirm => "Are you sure?", :method => :delete , :class => 'btn btn-danger' %>
+      
+     <hr>
+      
+    <div id="desireSearchBoxWrapper" class="rounded-corners">
+<h2 style="font-family: Broadway, fantasy;"> Recent Milestones Set </h2>
+ <div class="pop-stripe"></div>
+     <% current_user.posts.each do |post| %>
+   
+    <% if post.story.blank? %>
+   <h3>Milestone :  <%= post.message %> <small> <%= post.created_at %> </small> <%= link_to 'Pending', post, :class => "label label-warning" %> </h3>
+  <% else %>
+  <h3>Milestone :  <%= post.message %> <small> <%= post.created_at %> </small> <%= link_to 'Success', post, :class => "label label-success" %> </h3>
+  <% end %>
+    <%= link_to 'Show', post %>  |  
+    <%= link_to 'Edit', edit_post_path(post) %> | 
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    
+  
+    <% end %>
+  </div>
+    <% else %>
+      <!--  <h2> "Changing your life is hard. Doing it by yourself is harder! "</h2>  -->
+      <h2 style="font-family: Curlz MT;">"More Than <%= User.joins(:posts).count("user_id") %> Milestones Set Till Date, Still Counting <img src="http://localhost:3000/assets/userimg.png"/>!"</h2>
+     
+    
+   <center><%= image_tag("new.png", :alt => "Goalist", :class => "round") %></center>
+
+			<% end %>
+
+	</div>		
+    <div class="span4">
+			<% unless current_user %>
+					<div class="tabbable">
+					   <ul class="nav nav-tabs">
+					    <li class="active"><a href="#tab1" data-toggle="tab">Log in</a></li>
+					    <li><a href="#tab2" data-toggle="tab">Sign up</a></li>
+					  </ul>
+					  <div class="tab-content">
+					   <div class="tab-pane active" id="tab1">
+					     <%= render "sessions/form" %>
+					   </div>
+					   <div class="tab-pane" id="tab2">
+					     <%= render :partial => "form", :locals => { :user => @user } %>
+					   </div>
+					 </div>
+			</div>
+	<% else %>
+  <hr>
+      <% if current_user %>
+      <h4>Hi I Am <%= current_user.name %> </h4></br><% end %>
+				  <h4>Bio: <%= current_user.bio %></h4></br>
+		<h4>Total Milestones Set Till Date: <%= current_user.posts.count %></h4>
+      
+    
+     <hr>
+  <div class="span12">
+    <div class="row">
+      <div class="span7">
+	      <h3 style="margin-left:30px;"> <%= image_tag current_user.photo.url,  :class => "typo rounded-corners"%> </h3>
+      </div>
+      <div class="span5">
+         <h6> <img src="http://localhost:3000/assets/light.gif"/> </h6>
+        <h4 style="color:purple;"> Time Lapsed Since Milestones set </h4>
+        <% current_user.posts.each do |post| %>
+        
+        <% if post.story.blank? %>
+        <h5> * <%= time_ago_in_words(post.created_at) %> </h5>
+        <% else %>  
+          <h4> Goal Accomplished </h4>
+        <% end %>
+        
+        <% end %>
+        
+   </div>
+</div>
+</div>
+		    <% end %>
+		
+	</div>
+  
+ </div>
+</div>

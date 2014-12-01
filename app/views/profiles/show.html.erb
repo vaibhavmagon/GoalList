@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @profile.photo.url  %>
+
+<p>
+  <b>Born on:</b>
+  <%= @profile.Born_on %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @profile.Gender %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @profile.Location %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @profile.About %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

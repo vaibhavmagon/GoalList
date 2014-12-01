@@ -1,0 +1,69 @@
+<%= form_for(@post, :remote => true) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+</br>
+
+</br>
+
+  <div class="row">
+    <div class="span8">
+        <div class="field">
+          <h1> Compulsary Fields </h1>
+        </br>
+             <h1 ><%= f.label :Set_Up_a_Milestone_?, :class => 'envelope-text' %>
+              <%= f.text_area :message , :class => 'envelope' , :placeholder => "Start Setting Milestone ! ! ! "%> </h1>
+        </div>
+        </br>
+  <div class="field" style="display:none;">
+    <h1><%= f.label :created_at, :class => 'envelope-text' %></h1>
+    <%= f.date_select :created_at %>
+  </div>
+</br>
+<div class="field">
+<h1><%= f.label :Add_Photo_!, :class =>  'envelope-text' %></h1>
+  <%= f.file_field :mphoto, :class => "btn btn-warning" %>
+</div>
+    </div>
+    <div class="span4">
+      <img src="http://localhost:3000/assets/quote1.png"/>
+    </div>
+  </div>
+
+</br>
+</br>
+<center><h1 style="font-family: Curlz MT;" ><img src="http://localhost:3000/assets/bablul.png" /><button class="btn btn-large btn-block btn-primary yo"> Goal Achieved (Press) to Proceed Further !!!!</button> <img src="http://localhost:3000/assets/bablur.png"/></h1></center>
+
+</br> 
+</br>
+<div class="field">
+    <h1><%= f.label :completed_at_!, :class => 'envelope-text' %></h1>
+    <%= f.date_select :completed_at %>
+  </div>
+
+</br>
+  <div class="field">
+   <h1> <%= f.label :Goal_Accomplished_Story_to_Tell_!, :class =>'envelope-text' %></h1>
+    <%= f.text_area :story, :class => 'envelope-goal', :placeholder => "# Describe In about 200 Words How You have achieved Your Goal :) " %>
+  </div>
+  
+</br>
+  <div class="field">
+   <h1> <%= f.label :Moral_Learnt_!, :class =>'envelope-text' %></h1>
+    <%= f.text_area :moral , :class => 'envelope-moral', :id => "eng", :placeholder => "# Just a Line (20 words) To describe What Goal Accomplishment made you FEEL!"  %> 
+  </div>
+  
+  <div><%= f.hidden_field :user_id, :value => current_user.id %></div>
+  
+   <%= f.submit :class => 'btn btn-success', :value => 'Create Post' %>
+  
+<% end %> 

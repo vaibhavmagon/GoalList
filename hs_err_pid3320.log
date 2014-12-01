@@ -1,0 +1,384 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d86c2ff, pid=3320, tid=3284
+#
+# JRE version: 6.0_30-b12
+# Java VM: Java HotSpot(TM) Client VM (20.5-b03 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x7c2ff]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x011f9c00):  JavaThread "main" [_thread_in_vm, id=3284, stack(0x01ad0000,0x01bd0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x42aa002c
+
+Registers:
+EAX=0x384309e0, EBX=0x37db6840, ECX=0x00000003, EDX=0x42aa0004
+ESP=0x01bce1d4, EBP=0x01bce1f0, ESI=0x37db7498, EDI=0x00000006
+EIP=0x6d86c2ff, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x01bce1d4)
+0x01bce1d4:   37a102e0 3842fa20 37db6840 00000000
+0x01bce1e4:   0000001e 00000000 01cd0364 01bce210
+0x01bce1f4:   6d86d34e 3842fbd8 37db6840 37a102e0
+0x01bce204:   011f9c00 6da11938 011fa4f0 01bce224
+0x01bce214:   6d83b789 37db6840 37a102e0 01bce46c
+0x01bce224:   01bce348 6d83bc39 01bce46c 011fa4e8
+0x01bce234:   011fa4ec 011fa4f0 011f9c00 01bce46c
+0x01bce244:   011fa4e8 011f9c00 00000000 011f9c00 
+
+Instructions: (pc=0x6d86c2ff)
+0x6d86c2df:   33 c9 4f 89 4d f8 89 7d f4 0f 88 08 01 00 00 8b
+0x6d86c2ef:   5d 0c 8b 55 08 03 cf d1 f9 8b 44 8a 0c 8b 50 08
+0x6d86c2ff:   0f b7 52 28 8b 70 0c 8b 74 96 28 3b f3 72 0d 33
+0x6d86c30f:   d2 3b f3 0f 95 c2 85 d2 74 1e 7d 06 41 89 4d f8 
+
+
+Register to memory mapping:
+
+EAX=0x384309e0 is an oop
+{method} 
+ - klass: {other class}
+EBX=0x37db6840 is an oop
+{symbol} 
+ - klass: {other class}
+ECX=0x00000003 is an unknown value
+EDX=0x42aa0004 is an unknown value
+ESP=0x01bce1d4 is pointing into the stack for thread: 0x011f9c00
+EBP=0x01bce1f0 is pointing into the stack for thread: 0x011f9c00
+ESI=0x37db7498 is an oop
+{symbol} 
+ - klass: {other class}
+EDI=0x00000006 is an unknown value
+
+
+Stack: [0x01ad0000,0x01bd0000],  sp=0x01bce1d4,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x7c2ff]
+V  [jvm.dll+0x7d34e]
+V  [jvm.dll+0x4b789]
+V  [jvm.dll+0x4bc39]
+V  [jvm.dll+0x4cd6d]
+V  [jvm.dll+0x4d80e]
+V  [jvm.dll+0x4df9f]
+V  [jvm.dll+0x4e0a8]
+V  [jvm.dll+0x4ac71]
+j  org.jruby.javasupport.proxy.JavaProxyClass$ProxyMethodImpl.getName()Ljava/lang/String;+4
+j  org.jruby.javasupport.proxy.JavaProxyConstructor$2.invoke(Ljava/lang/Object;Lorg/jruby/javasupport/proxy/JavaProxyMethod;[Ljava/lang/Object;)Ljava/lang/Object;+1
+j  org.jruby.proxy.org.eclipse.swt.dnd.ByteArrayTransfer$Proxy0.getTypeIds()[I+11
+j  org.eclipse.swt.dnd.ByteArrayTransfer.getSupportedTypes()[Lorg/eclipse/swt/dnd/TransferData;+1
+j  org.eclipse.swt.dnd.DragSource.EnumFormatEtc(II)I+36
+j  org.eclipse.swt.dnd.DragSource.access$10(Lorg/eclipse/swt/dnd/DragSource;II)I+3
+j  org.eclipse.swt.dnd.DragSource$4.method8([I)I+10
+j  org.eclipse.swt.internal.ole.win32.COMObject.callback8([I)I+47
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfac3b]
+V  [jvm.dll+0x18c3a1]
+V  [jvm.dll+0xfacbd]
+V  [jvm.dll+0x95776]
+V  [jvm.dll+0x9c593]
+C  [swt-win32-3735.dll+0x11f9]  Java_org_eclipse_swt_internal_Callback_reset+0x172
+C  0x00150315
+C  [ole32.dll+0x82cef]  OleQueryCreateFromData+0x110
+C  [ole32.dll+0x10aa88]  DoDragDrop+0x5b9
+C  [ole32.dll+0x109f74]  OleCreateFromFile+0x4143
+C  [ole32.dll+0x10a552]  DoDragDrop+0x83
+C  [swt-win32-3735.dll+0x2bf87]  Java_org_eclipse_swt_internal_ole_win32_COM_DoDragDrop+0x37
+j  org.eclipse.swt.internal.ole.win32.COM.DoDragDrop(III[I)I+0
+j  org.eclipse.swt.dnd.DragSource.drag(Lorg/eclipse/swt/widgets/Event;)V+474
+j  org.eclipse.swt.dnd.DragSource.access$0(Lorg/eclipse/swt/dnd/DragSource;Lorg/eclipse/swt/widgets/Event;)V+2
+j  org.eclipse.swt.dnd.DragSource$1.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+50
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+j  org.jruby.internal.runtime.methods.DefaultMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+20
+J  org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyClass;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+j  org.jruby.internal.runtime.methods.DefaultMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+20
+J  org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyClass;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+j  org.jruby.internal.runtime.methods.DefaultMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+20
+J  org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyClass;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+j  C_3a_.RailsInstaller.Ruby1_dot_9_dot_3.lib.ruby.gems.$1_dot_9_dot_1.gems.redcar_minus_0_dot_13.bin.redcar.load(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Z)Lorg/jruby/runtime/builtin/IRubyObject;+17
+j  org.jruby.Ruby.runScript(Lorg/jruby/ast/executable/Script;Z)Lorg/jruby/runtime/builtin/IRubyObject;+12
+j  org.jruby.Ruby.runScript(Lorg/jruby/ast/executable/Script;)Lorg/jruby/runtime/builtin/IRubyObject;+3
+j  org.jruby.Ruby.runNormally(Lorg/jruby/ast/Node;)Lorg/jruby/runtime/builtin/IRubyObject;+73
+j  org.jruby.Ruby.runFromMain(Ljava/io/InputStream;Ljava/lang/String;)V+304
+j  org.jruby.Main.doRunFromMain(Lorg/jruby/Ruby;Ljava/io/InputStream;Ljava/lang/String;)Lorg/jruby/Main$Status;+40
+j  org.jruby.Main.internalRun()Lorg/jruby/Main$Status;+148
+j  org.jruby.Main.run()Lorg/jruby/Main$Status;+1
+j  org.jruby.Main.run([Ljava/lang/String;)Lorg/jruby/Main$Status;+9
+j  org.jruby.Main.main([Ljava/lang/String;)V+14
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfac3b]
+V  [jvm.dll+0x18c3a1]
+V  [jvm.dll+0xfacbd]
+V  [jvm.dll+0x95776]
+V  [jvm.dll+0x9d5b3]
+C  [javaw.exe+0x2155]
+C  [javaw.exe+0x8614]
+C  [kernel32.dll+0x51114]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x5b299]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x5b26c]  RtlInitializeExceptionChain+0x36
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jruby.javasupport.proxy.JavaProxyClass$ProxyMethodImpl.getName()Ljava/lang/String;+4
+j  org.jruby.javasupport.proxy.JavaProxyConstructor$2.invoke(Ljava/lang/Object;Lorg/jruby/javasupport/proxy/JavaProxyMethod;[Ljava/lang/Object;)Ljava/lang/Object;+1
+j  org.jruby.proxy.org.eclipse.swt.dnd.ByteArrayTransfer$Proxy0.getTypeIds()[I+11
+j  org.eclipse.swt.dnd.ByteArrayTransfer.getSupportedTypes()[Lorg/eclipse/swt/dnd/TransferData;+1
+j  org.eclipse.swt.dnd.DragSource.EnumFormatEtc(II)I+36
+j  org.eclipse.swt.dnd.DragSource.access$10(Lorg/eclipse/swt/dnd/DragSource;II)I+3
+j  org.eclipse.swt.dnd.DragSource$4.method8([I)I+10
+j  org.eclipse.swt.internal.ole.win32.COMObject.callback8([I)I+47
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.ole.win32.COM.DoDragDrop(III[I)I+0
+j  org.eclipse.swt.dnd.DragSource.drag(Lorg/eclipse/swt/widgets/Event;)V+474
+j  org.eclipse.swt.dnd.DragSource.access$0(Lorg/eclipse/swt/dnd/DragSource;Lorg/eclipse/swt/widgets/Event;)V+2
+j  org.eclipse.swt.dnd.DragSource$1.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+50
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.runDeferredEvents()Z
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  sun.reflect.GeneratedMethodAccessor3.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  org.jruby.javasupport.JavaMethod.invokeDirectWithExceptionHandling(Ljava/lang/reflect/Method;Ljava/lang/Object;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.javasupport.JavaMethod.invokeDirect(Ljava/lang/Object;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.java.invokers.InstanceMethodInvoker.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.internal.runtime.methods.AliasMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.runtime.callsite.CachingCallSite.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.CallNoArgNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.LocalAsgnNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.IfNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.NewlineNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.RescueNode.interpretWithJavaExceptions(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.RescueNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.BeginNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.NewlineNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.WhileNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.NewlineNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.BlockNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Ljava/lang/String;ILorg/jruby/RubyModule;Lorg/jruby/ast/Node;Ljava/lang/String;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;Z)Lorg/jruby/runtime/builtin/IRubyObject;
+j  org.jruby.internal.runtime.methods.InterpretedMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+78
+j  org.jruby.internal.runtime.methods.DefaultMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+20
+J  org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyClass;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.runtime.callsite.CachingCallSite.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.CallNoArgNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.NewlineNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.BlockNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.IfNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.NewlineNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Ljava/lang/String;ILorg/jruby/RubyModule;Lorg/jruby/ast/Node;Ljava/lang/String;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;Z)Lorg/jruby/runtime/builtin/IRubyObject;
+j  org.jruby.internal.runtime.methods.InterpretedMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+78
+j  org.jruby.internal.runtime.methods.DefaultMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+20
+J  org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyClass;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.runtime.callsite.CachingCallSite.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.CallNoArgNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.NewlineNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.ast.BlockNode.interpret(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(Lorg/jruby/Ruby;Lorg/jruby/runtime/ThreadContext;Ljava/lang/String;ILorg/jruby/RubyModule;Lorg/jruby/ast/Node;Ljava/lang/String;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;Z)Lorg/jruby/runtime/builtin/IRubyObject;
+j  org.jruby.internal.runtime.methods.InterpretedMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+78
+j  org.jruby.internal.runtime.methods.DefaultMethod.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyModule;Ljava/lang/String;)Lorg/jruby/runtime/builtin/IRubyObject;+20
+J  org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/RubyClass;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+J  org.jruby.runtime.callsite.CachingCallSite.call(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/builtin/IRubyObject;)Lorg/jruby/runtime/builtin/IRubyObject;
+j  C_3a_.RailsInstaller.Ruby1_dot_9_dot_3.lib.ruby.gems.$1_dot_9_dot_1.gems.redcar_minus_0_dot_13.bin.redcar.__file__(LC_3a_/RailsInstaller/Ruby1_dot_9_dot_3/lib/ruby/gems/$1_dot_9_dot_1/gems/redcar_minus_0_dot_13/bin/redcar;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;[Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;+819
+j  C_3a_.RailsInstaller.Ruby1_dot_9_dot_3.lib.ruby.gems.$1_dot_9_dot_1.gems.redcar_minus_0_dot_13.bin.redcar.load(Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Z)Lorg/jruby/runtime/builtin/IRubyObject;+17
+j  org.jruby.Ruby.runScript(Lorg/jruby/ast/executable/Script;Z)Lorg/jruby/runtime/builtin/IRubyObject;+12
+j  org.jruby.Ruby.runScript(Lorg/jruby/ast/executable/Script;)Lorg/jruby/runtime/builtin/IRubyObject;+3
+j  org.jruby.Ruby.runNormally(Lorg/jruby/ast/Node;)Lorg/jruby/runtime/builtin/IRubyObject;+73
+j  org.jruby.Ruby.runFromMain(Ljava/io/InputStream;Ljava/lang/String;)V+304
+j  org.jruby.Main.doRunFromMain(Lorg/jruby/Ruby;Ljava/io/InputStream;Ljava/lang/String;)Lorg/jruby/Main$Status;+40
+j  org.jruby.Main.internalRun()Lorg/jruby/Main$Status;+148
+j  org.jruby.Main.run()Lorg/jruby/Main$Status;+1
+j  org.jruby.Main.run([Ljava/lang/String;)Lorg/jruby/Main$Status;+9
+j  org.jruby.Main.main([Ljava/lang/String;)V+14
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x051b0400 JavaThread "Thread-83" daemon [_thread_blocked, id=5076, stack(0x06ab0000,0x06bb0000)]
+  0x04d23000 JavaThread "RubyThread-7: file:/C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/redcar-jruby-0.1/vendor/jruby-complete-1.6.4.jar!/META-INF/jruby.home/lib/ruby/1.8/drb/drb.rb:1465" daemon [_thread_in_native, id=668, stack(0x05c40000,0x05d40000)]
+  0x01c57000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3648, stack(0x04170000,0x04270000)]
+  0x01c4ac00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1160, stack(0x04120000,0x04170000)]
+  0x01c49c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=772, stack(0x04020000,0x04120000)]
+  0x01c46c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2224, stack(0x03f20000,0x04020000)]
+  0x01c42000 JavaThread "Finalizer" daemon [_thread_blocked, id=1896, stack(0x03e20000,0x03f20000)]
+  0x01c3d400 JavaThread "Reference Handler" daemon [_thread_blocked, id=3712, stack(0x03d20000,0x03e20000)]
+=>0x011f9c00 JavaThread "main" [_thread_in_vm, id=3284, stack(0x01ad0000,0x01bd0000)]
+
+Other Threads:
+  0x01c00400 VMThread [stack: 0x03cd0000,0x03d20000] [id=3260]
+  0x01c58000 WatcherThread [stack: 0x04270000,0x042c0000] [id=3128]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 39296K, used 30561K [0x1fa10000, 0x224b0000, 0x264b0000)
+  eden space 34944K,  82% used [0x1fa10000, 0x2162acf8, 0x21c30000)
+  from space 4352K,  40% used [0x21c30000, 0x21ded7b0, 0x22070000)
+  to   space 4352K,   0% used [0x22070000, 0x22070000, 0x224b0000)
+ tenured generation   total 87176K, used 52355K [0x264b0000, 0x2b9d2000, 0x33a10000)
+   the space 87176K,  60% used [0x264b0000, 0x297d0dd0, 0x297d0e00, 0x2b9d2000)
+ compacting perm gen  total 28672K, used 28640K [0x33a10000, 0x35610000, 0x37a10000)
+   the space 28672K,  99% used [0x33a10000, 0x356081f0, 0x35608200, 0x35610000)
+    ro space 10240K,  51% used [0x37a10000, 0x37f3da30, 0x37f3dc00, 0x38410000)
+    rw space 12288K,  55% used [0x38410000, 0x38aa9b50, 0x38aa9c00, 0x39010000)
+
+Code Cache  [0x01cd0000, 0x02410000, 0x03cd0000)
+ total_blobs=4084 nmethods=3879 adapters=138 free_code_cache=25963712 largest_free_block=384
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Windows\system32\javaw.exe
+0x76f10000 - 0x7704c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76470000 - 0x76544000 	C:\Windows\system32\kernel32.dll
+0x75350000 - 0x7539a000 	C:\Windows\system32\KERNELBASE.dll
+0x770a0000 - 0x77140000 	C:\Windows\system32\ADVAPI32.dll
+0x769d0000 - 0x76a7c000 	C:\Windows\system32\msvcrt.dll
+0x76c30000 - 0x76c49000 	C:\Windows\SYSTEM32\sechost.dll
+0x76cb0000 - 0x76d51000 	C:\Windows\system32\RPCRT4.dll
+0x753a0000 - 0x75469000 	C:\Windows\system32\USER32.dll
+0x76a80000 - 0x76ace000 	C:\Windows\system32\GDI32.dll
+0x76580000 - 0x7658a000 	C:\Windows\system32\LPK.dll
+0x76790000 - 0x7682d000 	C:\Windows\system32\USP10.dll
+0x76550000 - 0x7656f000 	C:\Windows\system32\IMM32.DLL
+0x76ad0000 - 0x76b9c000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x733a0000 - 0x733d2000 	C:\Windows\system32\WINMM.dll
+0x74fd0000 - 0x7501b000 	C:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x74b70000 - 0x74b86000 	C:\Windows\system32\CRYPTSP.dll
+0x74910000 - 0x7494b000 	C:\Windows\system32\rsaenh.dll
+0x746a0000 - 0x746b7000 	C:\Windows\system32\USERENV.dll
+0x750a0000 - 0x750ab000 	C:\Windows\system32\profapi.dll
+0x75020000 - 0x7502c000 	C:\Windows\system32\CRYPTBASE.dll
+0x6d600000 - 0x6d613000 	C:\Program Files\Java\jre6\bin\net.dll
+0x76980000 - 0x769b5000 	C:\Windows\system32\WS2_32.dll
+0x76570000 - 0x76576000 	C:\Windows\system32\NSI.dll
+0x74b30000 - 0x74b6c000 	C:\Windows\system32\mswsock.dll
+0x74b20000 - 0x74b26000 	C:\Windows\System32\wship6.dll
+0x74180000 - 0x74190000 	C:\Windows\system32\NLAapi.dll
+0x749f0000 - 0x74a34000 	C:\Windows\system32\DNSAPI.dll
+0x6e610000 - 0x6e618000 	C:\Windows\System32\winrnr.dll
+0x6e600000 - 0x6e610000 	C:\Windows\system32\napinsp.dll
+0x6e5e0000 - 0x6e5f2000 	C:\Windows\system32\pnrpnsp.dll
+0x6e5d0000 - 0x6e5dd000 	C:\Windows\system32\wshbth.dll
+0x6ffb0000 - 0x6ffd1000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x71b10000 - 0x71b2c000 	C:\Windows\system32\Iphlpapi.DLL
+0x71b00000 - 0x71b07000 	C:\Windows\system32\WINNSI.DLL
+0x74020000 - 0x74025000 	C:\Windows\System32\wshtcpip.dll
+0x70370000 - 0x70376000 	C:\Windows\system32\rasadhlp.dll
+0x719a0000 - 0x719d8000 	C:\Windows\System32\fwpuclnt.dll
+0x6d620000 - 0x6d629000 	C:\Program Files\Java\jre6\bin\nio.dll
+0x65340000 - 0x65355000 	C:\Users\HOME\AppData\Local\Temp\jffi3651037914211314125.tmp
+0x75470000 - 0x760b9000 	C:\Windows\system32\shell32.dll
+0x76730000 - 0x76787000 	C:\Windows\system32\SHLWAPI.dll
+0x760c0000 - 0x7621c000 	C:\Windows\system32\ole32.dll
+0x6d780000 - 0x6d788000 	C:\Program Files\Java\jre6\bin\sunmscapi.dll
+0x75230000 - 0x7534e000 	C:\Windows\system32\CRYPT32.dll
+0x75110000 - 0x7511c000 	C:\Windows\system32\MSASN1.dll
+0x10000000 - 0x1006e000 	C:\Users\HOME\.swt\lib\win32\x86\swt-win32-3735.dll
+0x76ba0000 - 0x76c2f000 	C:\Windows\system32\OLEAUT32.dll
+0x76e90000 - 0x76f0b000 	C:\Windows\system32\comdlg32.dll
+0x744b0000 - 0x7464e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x76d70000 - 0x76e8b000 	C:\Windows\system32\WININET.dll
+0x76d60000 - 0x76d63000 	C:\Windows\system32\Normaliz.dll
+0x76220000 - 0x763d8000 	C:\Windows\system32\iertutil.dll
+0x76830000 - 0x76941000 	C:\Windows\system32\urlmon.dll
+0x73a10000 - 0x73a50000 	C:\Windows\system32\uxtheme.dll
+0x73670000 - 0x73683000 	C:\Windows\system32\dwmapi.dll
+0x73a50000 - 0x73b45000 	C:\Windows\system32\propsys.dll
+0x763e0000 - 0x76463000 	C:\Windows\system32\CLBCatQ.DLL
+0x003a0000 - 0x003bd000 	C:\Users\HOME\.swt\lib\win32\x86\swt-gdip-win32-3735.dll
+0x73800000 - 0x73990000 	C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7600.17007_none_72f44f3186198a88\gdiplus.dll
+0x73540000 - 0x7363b000 	C:\Windows\system32\WindowsCodecs.dll
+0x6df00000 - 0x6df05000 	C:\Windows\system32\msimg32.dll
+0x72210000 - 0x7224c000 	C:\Windows\system32\oleacc.dll
+0x75030000 - 0x7503e000 	C:\Windows\system32\RpcRtRemote.dll
+0x76590000 - 0x7672d000 	C:\Windows\system32\SETUPAPI.dll
+0x75200000 - 0x75227000 	C:\Windows\system32\CFGMGR32.dll
+0x751b0000 - 0x751c2000 	C:\Windows\system32\DEVOBJ.dll
+0x74280000 - 0x742a1000 	C:\Windows\system32\ntmarta.dll
+0x77050000 - 0x77095000 	C:\Windows\system32\WLDAP32.dll
+0x73710000 - 0x7373f000 	C:\Windows\system32\DUser.dll
+0x73740000 - 0x737f2000 	C:\Windows\system32\DUI70.dll
+0x05f10000 - 0x05f27000 	C:\Users\HOME\AppData\Roaming\Dropbox\bin\DropboxExt.14.dll
+0x6de10000 - 0x6defb000 	C:\Windows\system32\dbghelp.dll
+0x7c3a0000 - 0x7c41b000 	C:\Users\HOME\AppData\Roaming\Dropbox\bin\MSVCP71.dll
+0x6ddd0000 - 0x6de01000 	C:\Windows\system32\EhStorShell.dll
+0x661c0000 - 0x663dd000 	C:\PROGRA~1\MICROS~2\Office12\GR469A~1.DLL
+0x68ef0000 - 0x68fe1000 	C:\PROGRA~1\MICROS~2\Office12\GrooveUtil.DLL
+0x70f90000 - 0x7102b000 	C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a\MSVCR80.dll
+0x68ff0000 - 0x68ff7000 	C:\PROGRA~1\MICROS~2\Office12\GrooveNew.DLL
+0x74010000 - 0x74019000 	C:\Windows\system32\VERSION.dll
+0x6ddb0000 - 0x6ddcb000 	C:\Windows\WinSxS\x86_microsoft.vc80.atl_1fc8b3b9a1e18e3b_8.0.50727.4053_none_d1c738ec43578ea1\ATL80.DLL
+0x6dd40000 - 0x6ddaa000 	C:\Windows\System32\cscui.dll
+0x6dd30000 - 0x6dd39000 	C:\Windows\System32\CSCDLL.dll
+0x70360000 - 0x7036b000 	C:\Windows\system32\CSCAPI.dll
+0x6dcc0000 - 0x6dd2f000 	C:\Windows\system32\ntshrui.dll
+0x74f20000 - 0x74f39000 	C:\Windows\system32\srvcli.dll
+0x73380000 - 0x7338a000 	C:\Windows\system32\slc.dll
+0x6db60000 - 0x6db8b000 	C:\Windows\system32\msls31.dll
+0x73640000 - 0x7366f000 	C:\Windows\system32\xmllite.dll
+0x6c310000 - 0x6c36c000 	C:\Windows\System32\StructuredQuery.dll
+0x74f90000 - 0x74f98000 	C:\Windows\System32\Secur32.dll
+0x74fb0000 - 0x74fca000 	C:\Windows\system32\SSPICLI.DLL
+0x6e550000 - 0x6e566000 	C:\Windows\system32\thumbcache.dll
+0x769c0000 - 0x769c5000 	C:\Windows\system32\PSAPI.DLL
+0x6dba0000 - 0x6dbce000 	C:\Windows\system32\SHDOCVW.dll
+0x6b580000 - 0x6becd000 	C:\Windows\system32\ieframe.DLL
+0x6cbd0000 - 0x6cd68000 	C:\Windows\system32\NetworkExplorer.dll
+0x6db90000 - 0x6db99000 	C:\Windows\system32\LINKINFO.dll
+0x6e3b0000 - 0x6e3c2000 	C:\Windows\system32\MPR.dll
+0x71f80000 - 0x71f88000 	C:\Windows\System32\drprov.dll
+0x747a0000 - 0x747c9000 	C:\Windows\System32\WINSTA.dll
+0x71c70000 - 0x71c84000 	C:\Windows\System32\ntlanman.dll
+0x71c50000 - 0x71c67000 	C:\Windows\System32\davclnt.dll
+0x71bf0000 - 0x71bf8000 	C:\Windows\System32\DAVHLPR.dll
+0x74460000 - 0x7446f000 	C:\Windows\system32\wkscli.dll
+0x74470000 - 0x74479000 	C:\Windows\system32\netutils.dll
+0x751d0000 - 0x751fd000 	C:\Windows\system32\WINTRUST.dll
+0x6daa0000 - 0x6dace000 	C:\Windows\system32\mlang.dll
+0x6dbd0000 - 0x6dc1e000 	C:\Windows\system32\actxprxy.dll
+0x72260000 - 0x72293000 	C:\Program Files\Internet Explorer\ieproxy.dll
+0x73030000 - 0x730cf000 	C:\Windows\system32\SearchFolder.dll
+0x6e820000 - 0x6e8a9000 	C:\Windows\system32\PortableDeviceApi.dll
+0x6e5a0000 - 0x6e5c2000 	C:\Windows\system32\EhStorAPI.dll
+0x65e30000 - 0x65e67000 	C:\PROGRA~1\MICROS~2\Office12\GRA32A~1.DLL
+0x6d640000 - 0x6d773000 	C:\Windows\System32\msxml3.dll
+0x6db00000 - 0x6db58000 	C:\Program Files\Common Files\microsoft shared\ink\tiptsf.dll
+0x6df80000 - 0x6e0ef000 	C:\Windows\system32\explorerframe.dll
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/redcar-jruby-0.1/vendor/jruby-complete-1.6.4.jar -Dfile.encoding=UTF8 -Xmx320m -Xss1024k -Djruby.memory.max=320m -Djruby.stack.max=1024k 
+java_command: org.jruby.Main C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/redcar-0.13/bin/redcar --no-sub-jruby --ignore-stdin --start-time=1348733784 && echo 'finished'
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files\Java\jre6\lib\ext\QTJava.zip
+PATH=C:\RailsInstaller\Ruby1.9.3\bin;C:\RailsInstaller\Ruby1.9.3\lib\ruby\gems\1.9.1\bin;C:\RailsInstaller\DevKit\bin;C:\RailsInstaller\Git\cmd;C:\Program Files\ImageMagick-6.5.6-Q8;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Users\HOME\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby1.9.3\bin;C:\Ruby193\bin
+USERNAME=HOME
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 3659820k(1183108k free), swap 7317876k(4356100k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.5-b03) for windows-x86 JRE (1.6.0_30-b12), built on Nov 10 2011 01:51:00 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Fri Sep 28 15:40:12 2012
+elapsed time: 93924 seconds
+

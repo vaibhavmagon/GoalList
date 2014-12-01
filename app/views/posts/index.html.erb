@@ -1,0 +1,118 @@
+<% if root %>
+<h1>Listing Milestones</h1>
+<hr>
+
+<div class="span12">
+<table class="table table-bordered">
+  <tr>
+    <th>Milestone</th>
+    <th>Created at</th>
+    <th>User</th>
+    <th></th>
+    
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.message %></td>
+    <td><%= post.created_at %></td>
+    <td><%= post.user.name %></td>
+    <td><%= link_to 'Show', post %></td>
+   <% if root %>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+</div>
+<%= link_to 'New Post', new_post_path ,:class => "btn btn-primary" %> 
+
+<% else %>
+<hr>
+<div class="span12">
+  <div class="row">
+    <div class="span2">
+      <h3><%= link_to (image_tag current_user.photo.url, :class => "typo"), current_user %></h3>
+      <hr>
+      <h4><%= current_user.name %></h4></br>
+      <h4><%= current_user.email %></h4><br/>
+      <h4><%= current_user.bio %></h4>
+      <hr>
+      <%= link_to 'Set Milestone', new_post_path ,:class => "btn btn-primary btn-large" %> 
+    </div>
+    
+    
+   
+  <div class="span8 rounded-corners" id="all">
+     <div id="desireSearchBoxWrap" class="rounded-corners">
+    <h1  style="font-family: Pussycat, Algerian, Broadway, fantasy; color: #0bb0ff;">
+       Milestones!
+      <span class="span4 offset4" style="margin-top:-40px;">
+        <div class="input-append">
+      <%= form_tag posts_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil, :class =>"btn btn-primary" %>
+    </div>
+    </span>
+      <% end %>
+    </h1>  
+ <!--  <% @posts.each do |post| %>
+    <div id="mile" class="rounded-corners">
+     <h4>
+      <div class="row" style="line-height:25px;">
+      <div class="span0">
+         <%= image_tag post.user.photo.url, :class => "smphoto rounded-corners" %>
+      </div>
+      <div class="span5">
+      <strong style="color:green;"> <%= post.user.name %> </strong> <small><%= post.created_at %></small></br><i style="color:blue;"> <%= post.message %></i>
+    </div>
+    <div class="span0">
+    <%= link_to 'Story', post, :class => 'left btn round large green radius_XL shadow' %>
+  </div>
+</h4>
+</div>
+    <% end %>
+  </div> -->
+ 
+	<div id="columns" class="span7">
+     <% @posts.each do |post| %>
+		<div class="pin zom">
+      <%= link_to (image_tag post.user.photo.url, :id =>'img'), post.user %> 
+        <p>
+        <strong style="color:green;font-family: harlow solid italic;font-size:15px;"> <%= post.user.name %> </strong></br>
+        <small><%= time_ago_in_words(post.created_at) %></small></br><i style="color:blue;"> <%= post.message %></i>   
+    </p>
+    <% if post.story.blank? %>
+    <%= link_to 'Pending', post, :class => "label label-warning" %>
+    <% else %>
+    <%= link_to 'Success', post, :class => "label label-success" %>
+  <% end %>
+		</div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
+<div class="span2">
+  
+  <img src="http://localhost:3000/assets/stag.png" class="img-circle" />
+  
+<div class="addthis_toolbox addthis_floating_style addthis_32x32_style">
+     <img src="http://localhost:3000/assets/follow.png">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505f453d0d492413"></script>
+<!-- AddThis Button END -->
+</div>
+
+</div>
+<% end %>
+

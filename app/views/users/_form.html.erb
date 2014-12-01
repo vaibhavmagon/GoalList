@@ -1,0 +1,37 @@
+<%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-error">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.text_field :name, :placeholder => 'Name' %>
+  </p>
+  
+  <% if current_user %>
+   <p>
+      <%= f.text_field :bio, :placeholder => 'Bio' %>
+  </p>
+  <% end %>
+  
+  <p>
+    <%= f.text_field :email, :placeholder => 'Email' %>
+  </p>
+  <p>
+    <%= f.password_field :password, :placeholder => 'Password' %>
+  </p>
+  <p>
+    <%= f.password_field :password_confirmation, :placeholder => 'Password confirm' %>
+  </p>
+  
+  <% if current_user %>
+  <p> <%= f.file_field :photo %> </p>
+  <% end %>
+  
+  <%= f.submit :class => 'btn btn-large btn-success', :value => 'Register' %>
+<% end %>

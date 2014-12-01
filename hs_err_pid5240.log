@@ -1,0 +1,281 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d86c2dc, pid=5240, tid=4680
+#
+# JRE version: 6.0_30-b12
+# Java VM: Java HotSpot(TM) Client VM (20.5-b03 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x7c2dc]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01b6cc00):  JavaThread "C1 CompilerThread0" daemon [_thread_in_vm, id=4680, stack(0x040e0000,0x04130000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xfffe44fe
+
+Registers:
+EAX=0xfffe44f6, EBX=0x00000000, ECX=0x3560d728, EDX=0x37db5ac0
+ESP=0x0412f48c, EBP=0x0412f4a8, ESI=0x0412f688, EDI=0x3560d720
+EIP=0x6d86c2dc, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0412f48c)
+0x0412f48c:   3560d720 0412f688 00000000 0568c008
+0x0412f49c:   00000002 00000003 38410150 0412f4bc
+0x0412f4ac:   6d86d324 fffe44f6 37db5ac0 37a10330
+0x0412f4bc:   0412f670 6d823ff7 37db5ac0 37a10330
+0x0412f4cc:   04dc0600 38410698 01b6cc00 356b99c0
+0x0412f4dc:   04d6aed0 04d6df24 00000000 04dbeb88
+0x0412f4ec:   0412f50c 01b674d8 04d65f30 04d6aed0
+0x0412f4fc:   04d6df24 00000000 0412f5fc 6d83cd6d 
+
+Instructions: (pc=0x6d86c2dc)
+0x6d86c2bc:   5b 5d c2 04 00 cc cc cc cc cc cc cc cc cc cc cc
+0x6d86c2cc:   cc cc cc cc 55 8b ec 83 ec 10 8b 45 08 53 56 57
+0x6d86c2dc:   8b 78 08 33 c9 4f 89 4d f8 89 7d f4 0f 88 08 01
+0x6d86c2ec:   00 00 8b 5d 0c 8b 55 08 03 cf d1 f9 8b 44 8a 0c 
+
+
+Register to memory mapping:
+
+EAX=0xfffe44f6 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x3560d728 is an oop
+{instance class} 
+ - klass: {other class}
+EDX=0x37db5ac0 is an oop
+{symbol} 
+ - klass: {other class}
+ESP=0x0412f48c is pointing into the stack for thread: 0x01b6cc00
+EBP=0x0412f4a8 is pointing into the stack for thread: 0x01b6cc00
+ESI=0x0412f688 is pointing into the stack for thread: 0x01b6cc00
+EDI=0x3560d720 is an oop
+{instance class} 
+ - klass: {other class}
+
+
+Stack: [0x040e0000,0x04130000],  sp=0x0412f48c,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x7c2dc]
+V  [jvm.dll+0x7d324]
+V  [jvm.dll+0x33ff7]
+V  [jvm.dll+0x34922]
+V  [jvm.dll+0x7f75]
+V  [jvm.dll+0x1ed2e0]
+V  [jvm.dll+0x1ee91d]
+V  [jvm.dll+0x1ef01a]
+V  [jvm.dll+0x1ef1b1]
+V  [jvm.dll+0x1f1b81]
+V  [jvm.dll+0x1f1c4e]
+V  [jvm.dll+0x1e33d3]
+V  [jvm.dll+0x1e3a15]
+V  [jvm.dll+0x1e3b1c]
+V  [jvm.dll+0x1e3c6f]
+V  [jvm.dll+0x1e3ec4]
+V  [jvm.dll+0x3dc4d]
+V  [jvm.dll+0x3e77f]
+V  [jvm.dll+0x118f14]
+V  [jvm.dll+0x140ffc]
+C  [msvcr71.dll+0x9565]  endthreadex+0xa0
+C  [kernel32.dll+0x51114]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x5b299]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x5b26c]  RtlInitializeExceptionChain+0x36
+
+
+Current CompileTask:
+C1:141191368 3944      org.jruby.javasupport.Java.interfacesHashCode([Ljava/lang/Class;)I (56 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x043e3400 JavaThread "Thread-35" daemon [_thread_blocked, id=5196, stack(0x06a60000,0x06b60000)]
+  0x0445f800 JavaThread "RubyThread-7: file:/C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/redcar-jruby-0.1/vendor/jruby-complete-1.6.4.jar!/META-INF/jruby.home/lib/ruby/1.8/drb/drb.rb:1465" daemon [_thread_in_native, id=5512, stack(0x05c50000,0x05d50000)]
+  0x01b8a000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3200, stack(0x04130000,0x04230000)]
+=>0x01b6cc00 JavaThread "C1 CompilerThread0" daemon [_thread_in_vm, id=4680, stack(0x040e0000,0x04130000)]
+  0x01b69c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=168, stack(0x03fe0000,0x040e0000)]
+  0x01b68c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2148, stack(0x03ee0000,0x03fe0000)]
+  0x01b5ec00 JavaThread "Finalizer" daemon [_thread_blocked, id=5672, stack(0x03de0000,0x03ee0000)]
+  0x01b5d400 JavaThread "Reference Handler" daemon [_thread_blocked, id=3800, stack(0x03ce0000,0x03de0000)]
+  0x019ea000 JavaThread "main" [_thread_blocked, id=2776, stack(0x019f0000,0x01af0000)]
+
+Other Threads:
+  0x01b20800 VMThread [stack: 0x03c90000,0x03ce0000] [id=4556]
+  0x01b92c00 WatcherThread [stack: 0x04230000,0x04280000] [id=5668]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x019e8110] Compile_lock - owner thread: 0x01b6cc00
+
+Heap
+ def new generation   total 38720K, used 19426K [0x1fa10000, 0x22410000, 0x264b0000)
+  eden space 34432K,  51% used [0x1fa10000, 0x20b47168, 0x21bb0000)
+  from space 4288K,  41% used [0x21fe0000, 0x221a18e8, 0x22410000)
+  to   space 4288K,   0% used [0x21bb0000, 0x21bb0000, 0x21fe0000)
+ tenured generation   total 85900K, used 60756K [0x264b0000, 0x2b893000, 0x33a10000)
+   the space 85900K,  70% used [0x264b0000, 0x2a0050e8, 0x2a005200, 0x2b893000)
+ compacting perm gen  total 29696K, used 29515K [0x33a10000, 0x35710000, 0x37a10000)
+   the space 29696K,  99% used [0x33a10000, 0x356e2c00, 0x356e2c00, 0x35710000)
+    ro space 10240K,  51% used [0x37a10000, 0x37f3da30, 0x37f3dc00, 0x38410000)
+    rw space 12288K,  55% used [0x38410000, 0x38aa9b50, 0x38aa9c00, 0x39010000)
+
+Code Cache  [0x01bf0000, 0x023b8000, 0x03bf0000)
+ total_blobs=4291 nmethods=4086 adapters=138 free_code_cache=25424192 largest_free_block=256
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Windows\system32\javaw.exe
+0x77c60000 - 0x77d9c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x77780000 - 0x77854000 	C:\Windows\system32\kernel32.dll
+0x760a0000 - 0x760ea000 	C:\Windows\system32\KERNELBASE.dll
+0x76430000 - 0x764d0000 	C:\Windows\system32\ADVAPI32.dll
+0x76380000 - 0x7642c000 	C:\Windows\system32\msvcrt.dll
+0x77860000 - 0x77879000 	C:\Windows\SYSTEM32\sechost.dll
+0x762c0000 - 0x76361000 	C:\Windows\system32\RPCRT4.dll
+0x77370000 - 0x77439000 	C:\Windows\system32\USER32.dll
+0x77440000 - 0x7748e000 	C:\Windows\system32\GDI32.dll
+0x76370000 - 0x7637a000 	C:\Windows\system32\LPK.dll
+0x76100000 - 0x7619d000 	C:\Windows\system32\USP10.dll
+0x77db0000 - 0x77dcf000 	C:\Windows\system32\IMM32.DLL
+0x77650000 - 0x7771c000 	C:\Windows\system32\MSCTF.dll
+0x766c0000 - 0x76717000 	C:\Windows\system32\SHLWAPI.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x74260000 - 0x74292000 	C:\Windows\system32\WINMM.dll
+0x75d20000 - 0x75d6b000 	C:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x75850000 - 0x75866000 	C:\Windows\system32\CRYPTSP.dll
+0x75600000 - 0x7563b000 	C:\Windows\system32\rsaenh.dll
+0x75450000 - 0x75467000 	C:\Windows\system32\USERENV.dll
+0x75df0000 - 0x75dfb000 	C:\Windows\system32\profapi.dll
+0x75d70000 - 0x75d7c000 	C:\Windows\system32\CRYPTBASE.dll
+0x6d600000 - 0x6d613000 	C:\Program Files\Java\jre6\bin\net.dll
+0x77c20000 - 0x77c55000 	C:\Windows\system32\WS2_32.dll
+0x77da0000 - 0x77da6000 	C:\Windows\system32\NSI.dll
+0x75810000 - 0x7584c000 	C:\Windows\system32\mswsock.dll
+0x75880000 - 0x75886000 	C:\Windows\System32\wship6.dll
+0x74170000 - 0x74180000 	C:\Windows\system32\NLAapi.dll
+0x756e0000 - 0x75724000 	C:\Windows\system32\DNSAPI.dll
+0x72600000 - 0x72608000 	C:\Windows\System32\winrnr.dll
+0x725f0000 - 0x72600000 	C:\Windows\system32\napinsp.dll
+0x725d0000 - 0x725e2000 	C:\Windows\system32\pnrpnsp.dll
+0x725c0000 - 0x725cd000 	C:\Windows\system32\wshbth.dll
+0x70d00000 - 0x70d21000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x73bc0000 - 0x73bdc000 	C:\Windows\system32\Iphlpapi.DLL
+0x73bb0000 - 0x73bb7000 	C:\Windows\system32\WINNSI.DLL
+0x75380000 - 0x75385000 	C:\Windows\System32\wshtcpip.dll
+0x710c0000 - 0x710c6000 	C:\Windows\system32\rasadhlp.dll
+0x73aa0000 - 0x73ad8000 	C:\Windows\System32\fwpuclnt.dll
+0x6d620000 - 0x6d629000 	C:\Program Files\Java\jre6\bin\nio.dll
+0x65340000 - 0x65355000 	C:\Users\HOME\AppData\Local\Temp\jffi8231777946041922054.tmp
+0x76720000 - 0x77369000 	C:\Windows\system32\shell32.dll
+0x76560000 - 0x766bc000 	C:\Windows\system32\ole32.dll
+0x6d780000 - 0x6d788000 	C:\Program Files\Java\jre6\bin\sunmscapi.dll
+0x75e70000 - 0x75f8e000 	C:\Windows\system32\CRYPT32.dll
+0x75e60000 - 0x75e6c000 	C:\Windows\system32\MSASN1.dll
+0x10000000 - 0x1006e000 	C:\Users\HOME\.swt\lib\win32\x86\swt-win32-3735.dll
+0x77dd0000 - 0x77e5f000 	C:\Windows\system32\OLEAUT32.dll
+0x778e0000 - 0x7795b000 	C:\Windows\system32\comdlg32.dll
+0x74d80000 - 0x74f1e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x761a0000 - 0x762bb000 	C:\Windows\system32\WININET.dll
+0x760f0000 - 0x760f3000 	C:\Windows\system32\Normaliz.dll
+0x77490000 - 0x77648000 	C:\Windows\system32\iertutil.dll
+0x77b00000 - 0x77c11000 	C:\Windows\system32\urlmon.dll
+0x74bf0000 - 0x74c30000 	C:\Windows\system32\uxtheme.dll
+0x74910000 - 0x74923000 	C:\Windows\system32\dwmapi.dll
+0x74c30000 - 0x74d25000 	C:\Windows\system32\propsys.dll
+0x764d0000 - 0x76553000 	C:\Windows\system32\CLBCatQ.DLL
+0x00380000 - 0x0039d000 	C:\Users\HOME\.swt\lib\win32\x86\swt-gdip-win32-3735.dll
+0x74a60000 - 0x74bf0000 	C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7600.17007_none_72f44f3186198a88\gdiplus.dll
+0x74790000 - 0x7488b000 	C:\Windows\system32\WindowsCodecs.dll
+0x6e8f0000 - 0x6e8f5000 	C:\Windows\system32\msimg32.dll
+0x6bee0000 - 0x6bf1c000 	C:\Windows\system32\oleacc.dll
+0x75d80000 - 0x75d8e000 	C:\Windows\system32\RpcRtRemote.dll
+0x77960000 - 0x77afd000 	C:\Windows\system32\SETUPAPI.dll
+0x76020000 - 0x76047000 	C:\Windows\system32\CFGMGR32.dll
+0x76050000 - 0x76062000 	C:\Windows\system32\DEVOBJ.dll
+0x74330000 - 0x74351000 	C:\Windows\system32\ntmarta.dll
+0x77720000 - 0x77765000 	C:\Windows\system32\WLDAP32.dll
+0x74970000 - 0x7499f000 	C:\Windows\system32\DUser.dll
+0x749a0000 - 0x74a52000 	C:\Windows\system32\DUI70.dll
+0x05f00000 - 0x05f17000 	C:\Users\HOME\AppData\Roaming\Dropbox\bin\DropboxExt.14.dll
+0x6ec00000 - 0x6eceb000 	C:\Windows\system32\dbghelp.dll
+0x7c3a0000 - 0x7c41b000 	C:\Users\HOME\AppData\Roaming\Dropbox\bin\MSVCP71.dll
+0x6ebc0000 - 0x6ebf1000 	C:\Windows\system32\EhStorShell.dll
+0x661c0000 - 0x663dd000 	C:\PROGRA~1\MICROS~2\Office12\GR469A~1.DLL
+0x68ef0000 - 0x68fe1000 	C:\PROGRA~1\MICROS~2\Office12\GrooveUtil.DLL
+0x71ce0000 - 0x71d7b000 	C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a\MSVCR80.dll
+0x68ff0000 - 0x68ff7000 	C:\PROGRA~1\MICROS~2\Office12\GrooveNew.DLL
+0x752f0000 - 0x752f9000 	C:\Windows\system32\VERSION.dll
+0x6e900000 - 0x6e91b000 	C:\Windows\WinSxS\x86_microsoft.vc80.atl_1fc8b3b9a1e18e3b_8.0.50727.4053_none_d1c738ec43578ea1\ATL80.DLL
+0x6e880000 - 0x6e8ea000 	C:\Windows\System32\cscui.dll
+0x6e870000 - 0x6e879000 	C:\Windows\System32\CSCDLL.dll
+0x710b0000 - 0x710bb000 	C:\Windows\system32\CSCAPI.dll
+0x6e800000 - 0x6e86f000 	C:\Windows\system32\ntshrui.dll
+0x75c30000 - 0x75c49000 	C:\Windows\system32\srvcli.dll
+0x740b0000 - 0x740ba000 	C:\Windows\system32\slc.dll
+0x6e240000 - 0x6e26b000 	C:\Windows\system32\msls31.dll
+0x74890000 - 0x748bf000 	C:\Windows\system32\xmllite.dll
+0x6c9c0000 - 0x6ca1c000 	C:\Windows\System32\StructuredQuery.dll
+0x75ca0000 - 0x75ca8000 	C:\Windows\System32\Secur32.dll
+0x75cd0000 - 0x75cea000 	C:\Windows\system32\SSPICLI.DLL
+0x6ce80000 - 0x6ce96000 	C:\Windows\system32\thumbcache.dll
+0x77770000 - 0x77775000 	C:\Windows\system32\PSAPI.DLL
+0x6e5a0000 - 0x6e5ce000 	C:\Windows\system32\SHDOCVW.dll
+0x07410000 - 0x07d5d000 	C:\Windows\system32\ieframe.DLL
+0x6d3e0000 - 0x6d578000 	C:\Windows\system32\NetworkExplorer.dll
+0x6eeb0000 - 0x6eec2000 	C:\Windows\system32\MPR.dll
+0x649c0000 - 0x649c8000 	C:\Windows\System32\drprov.dll
+0x75cf0000 - 0x75d19000 	C:\Windows\System32\WINSTA.dll
+0x649a0000 - 0x649b4000 	C:\Windows\System32\ntlanman.dll
+0x64980000 - 0x64997000 	C:\Windows\System32\davclnt.dll
+0x64970000 - 0x64978000 	C:\Windows\System32\DAVHLPR.dll
+0x6e590000 - 0x6e599000 	C:\Windows\system32\LINKINFO.dll
+0x74570000 - 0x7457f000 	C:\Windows\system32\wkscli.dll
+0x74580000 - 0x74589000 	C:\Windows\system32\netutils.dll
+0x76070000 - 0x7609d000 	C:\Windows\system32\WINTRUST.dll
+0x6f340000 - 0x6f36e000 	C:\Windows\system32\mlang.dll
+0x08480000 - 0x08561000 	C:\Program Files\Microsoft Office\Office12\1033\GrooveIntlResource.dll
+0x6e6d0000 - 0x6e71e000 	C:\Windows\system32\actxprxy.dll
+0x6ac50000 - 0x6ac83000 	C:\Program Files\Internet Explorer\ieproxy.dll
+0x6eed0000 - 0x6ef59000 	C:\Windows\system32\PortableDeviceApi.dll
+0x6c700000 - 0x6c79f000 	C:\Windows\system32\SearchFolder.dll
+0x6f1c0000 - 0x6f1e2000 	C:\Windows\system32\EhStorAPI.dll
+0x65e30000 - 0x65e67000 	C:\PROGRA~1\MICROS~2\Office12\GRA32A~1.DLL
+0x6e0a0000 - 0x6e1d3000 	C:\Windows\System32\msxml3.dll
+0x6e1e0000 - 0x6e238000 	C:\Program Files\Common Files\microsoft shared\ink\tiptsf.dll
+0x6ecf0000 - 0x6ee5f000 	C:\Windows\system32\explorerframe.dll
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/redcar-jruby-0.1/vendor/jruby-complete-1.6.4.jar -Dfile.encoding=UTF8 -Xmx320m -Xss1024k -Djruby.memory.max=320m -Djruby.stack.max=1024k 
+java_command: org.jruby.Main C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/redcar-0.13/bin/redcar --no-sub-jruby --ignore-stdin --start-time=1349444612 && echo 'finished'
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files\Java\jre6\lib\ext\QTJava.zip
+PATH=C:\RailsInstaller\Ruby1.9.3\bin;C:\RailsInstaller\Ruby1.9.3\lib\ruby\gems\1.9.1\bin;C:\RailsInstaller\DevKit\bin;C:\RailsInstaller\Git\cmd;C:\Program Files\ImageMagick-6.5.6-Q8;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Users\HOME\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Program Files\Heroku\bin;C:\Program Files\ruby-1.9.2\bin;C:\Program Files\git\bin;C:\Program Files\git\cmd;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby1.9.3\bin;C:\Ruby193\bin
+USERNAME=HOME
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 3659820k(2225988k free), swap 7317876k(4931456k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.5-b03) for windows-x86 JRE (1.6.0_30-b12), built on Nov 10 2011 01:51:00 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sun Oct 07 10:00:11 2012
+elapsed time: 141118 seconds
+

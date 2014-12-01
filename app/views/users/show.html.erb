@@ -1,0 +1,64 @@
+<div class="span12">
+  <div class="row">
+    <h1  style="font-family: Pussycat, Algerian, Broadway, fantasy; color: #0bb0ff;">User <img src="http://localhost:3000/assets/userimg.png"/> </h1>
+    <hr>
+    <div class="span5">
+<h4 style="font-size:25px;color:light black;font-family: harlow solid italic;" ><strong style="font-family: Brush Script MT;font-size:25px; color: purple;">Name:</strong> <%= @user.name %></h4>
+</br>
+<h4 style="font-size:25px;color:light black;font-family: harlow solid italic;"><strong style="font-family: Brush Script MT;font-size:25px; color: purple;">Email: </strong><%= @user.email %></h4>
+</br>
+<h4 style="font-size:25px;color:light black;font-family: harlow solid italic;"><strong style="font-family: Brush Script MT;font-size:25px; color: purple;">Bio: </strong> <%= @user.bio %></h4>
+</br>
+<h4 style="font-size:25px;color:light black;font-family: harlow solid italic;"><strong style="font-family: Brush Script MT;font-size:25px; color: purple;">Total Milestones Set: </strong> <%= @user.posts.count %></h4>
+</br>
+<h3><%= image_tag @user.photo.url, :class => "typo rounded-corners zoom" %></h3>
+
+</br>
+
+  <hr>
+  <% if root  %>
+<%= link_to 'Edit', edit_user_path(@user) %> |<% end %>
+<%= link_to 'Back', users_path , :class => 'btn btn-primary' %>
+
+</div>
+
+<div class="span1">
+  <% if current_user.friends.exists?(@user) || current_user %>
+  <h1></h1>
+  <% else %>
+  <h2> <img src="http://localhost:3000/assets/follow.png"> </h2>
+  <% end %>
+</div>
+<div class="span1">
+<% if current_user.friends.exists?(@user) || current_user %>
+<h2></h2>
+<% else %>
+   <%= button_to "Follow", friendships_path(:friend_id => @user.friendships ),  :method => :post , :class => 'left btn round large green radius_XL shadow' %>
+<% end %>
+</div>
+
+<div class="span3 offset2">
+  <h2  style="font-family: Brush Script MT;font-size:25px; color: purple;">Follow: <%= @user.friendships.count %></h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li style="color:light black;font-family: harlow solid italic;">
+      <%=h friendship.friend.name %>
+  <!--    (<%= button_to "remove", friendship, :method => :delete , :class => 'btn btn-small' %>) -->
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Find Friends", users_path %></p>
+
+<h2  style="font-family: Brush Script MT;font-size:25px; color: purple;">Followed by: <%= @user.inverse_friends.count %> </h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li style="color:light black;font-family: harlow solid italic;"><%=h user.name %></li>
+  <% end %>
+  
+</ul>
+</div>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<h1 class="envelope-text" style="font-family: Pussycat, Algerian, Broadway, fantasy; color: #0bb0ff;"> My Anecdote </h1>
+</br>
+<div class="span12">
+  <div class="row">
+    <div class="span2">
+   <h3 class="envelope-text"><strong>Milestone :</strong></h2>
+  </br>
+   <h3 class="envelope-text"><strong>Created at:</strong></h2>
+  </br>
+  <h3 class="envelope-text"><strong>Story:</strong></h2>
+    </div>
+
+  <div class="span5">
+   <h3><%= @post.message %></h3>
+</br>
+   <h3><%= @post.created_at %></h3>
+
+  </br>
+<% if @post.story.blank? %>
+ <img src="http://localhost:3000/assets/construction.png" />
+   <% else %>
+ <h3><%= @post.story %></h3>
+ <% end %>
+
+   </div>
+  <div class="span3 offset1">
+     <h3 class="envelope-text"><strong>Photo Memory:</strong></h2>
+    <%= image_tag @post.mphoto.url, :class => "mphoto" %>
+  </div>
+ </div>
+<hr>
+<% if root %>
+<%= link_to 'Edit', edit_post_path(@post) %> | <% end %>
+<%= link_to 'Back', posts_path, :class=>'btn btn-primary' %>
+</div>
+
+<hr>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'goalist'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        

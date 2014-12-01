@@ -1,0 +1,50 @@
+<div class="span12">
+  <div class="row"> 
+     <div id="desireSearchBoxWrapper" class="rounded-corners">
+      <div class="span7">
+    <h1  style="font-family: Pussycat, Algerian, Broadway, fantasy; color: #0bb0ff;"> <img src="http://localhost:3000/assets/goalbg.png" />  <img src="http://localhost:3000/assets/goalstory.png" /> </h1>  
+  </div>
+  <div class="span5">
+    <img src="http://localhost:3000/assets/quote3.png"/>
+  </div>
+  </br>
+</br>
+   <% if @posts.each do |f| %>
+      <% unless f.story.blank? %>
+    <div id="mile" class="rounded-corners">
+     <h4>
+    <hr>
+      <div class="row" style="line-height:25px;">
+      <div class="span0">
+         <%= link_to (image_tag f.user.photo.url, :class => "smphoto rounded-corners"), f.user %>
+      </div>
+      <div class="span7">
+      <strong style="color:green;color:light black;font-family: harlow solid italic;font-size:18px;"> <%= f.user.name %> </strong> <small><%= f.created_at %> <img src="http://localhost:3000/assets/correctsmall.png" /></small></br>
+      <div class="span12">   
+         <div class="row">
+             <div class="span6">
+                  <i style="color:blue;">
+                       <% unless f.story.blank? %>
+                       <%= f.story %>
+                       <% end %></i>
+               </div>
+             <div class="span4 offset1" style="color:light black;font-family: harlow solid italic;font-size:22px;">
+                     <% unless f.story.blank? %>
+                      <%= f.moral %> </br>
+                      <% end %></i>
+             </div>
+        </div>
+    </div>
+  </div>
+</div>
+</h4>
+</div>
+
+<% end %>
+     <% end %>
+    <% end %>
+  </div>
+ </div> 
+</div>
+</div>
+

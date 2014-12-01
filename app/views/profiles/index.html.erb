@@ -1,0 +1,32 @@
+<h1>Profiles Of All the Users!</h1>
+<hr>
+<p> User :- <%= current_user.name %> </p>
+<table class="table table-bordered">
+  <tr>
+    <th> Id </th>
+    <th>Born on</th>
+    <th>Gender</th>
+    <th>Location</th>
+    <th>About</th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.user_id %></td>
+    <td><%= profile.Born_on %></td>
+    <td><%= profile.Gender %></td>
+    <td><%= profile.Location %></td>
+    <td><%= profile.About %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <% if root || @profile.user_id = current_user.id %>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profile', new_profile_path %>
