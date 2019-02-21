@@ -12,8 +12,9 @@ Learning is incremental and you can grow a little bit at a time and suddenly rea
 * Security Authentication system.
 * CRUD based API's.
 
-#### [SQLite 3]
+#### SQLite 3
 * Primary Database.
+* Properly indexed and shared.
 
 #### [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/)
 * HTML5 ready. Use the new elements with confidence.
