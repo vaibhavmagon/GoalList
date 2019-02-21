@@ -8,6 +8,13 @@ Learning is incremental and you can grow a little bit at a time and suddenly rea
 
 ## Technologies
 
+#### [Ruby on Rails](http://rubyonrails.org/)
+* Security Authentication system.
+* CRUD based API's.
+
+#### [SQLite 3]
+* Primary Database.
+
 #### [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/)
 * HTML5 ready. Use the new elements with confidence.
 * Cross-browser compatible (Chrome, Opera, Safari, Firefox 3.6+, IE6+).
@@ -31,11 +38,6 @@ Learning is incremental and you can grow a little bit at a time and suddenly rea
 * Responsive design
 * Custom jQuery plugins
 * Cross-everything
-
-#### [Ruby on Rails](http://rubyonrails.org/)
-* Security Authentication system
-* Users CRUD
-
 
 
 ## License
