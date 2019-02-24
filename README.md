@@ -5,6 +5,14 @@ GoaList is an online goal achieveing community of people where they share milest
 Learning is incremental and you can grow a little bit at a time and suddenly realize you're competent in something new. It's a way of engaging in life itself. The milestone is to let you make your list, edit it, get inspired and share your progress. As you achieve a goal you've listed you can click on the "I've Achieved" button and share Anecdote about how you did it. GoaList is exactly that platform that helps people accomplish & get reward when they achieve goals.
 
 
+## Screenshots
+
+<img width="533" alt="screen shot 2019-02-24 at 8 38 33 pm" src="https://user-images.githubusercontent.com/5276190/53301089-ba08a000-3874-11e9-88fb-3c61330ea244.png">
+
+<img width="549" alt="screen shot 2019-02-24 at 8 38 29 pm" src="https://user-images.githubusercontent.com/5276190/53301090-baa13680-3874-11e9-9b52-fd924ac53698.png">
+
+<img width="551" alt="screen shot 2019-02-24 at 8 38 23 pm" src="https://user-images.githubusercontent.com/5276190/53301091-baa13680-3874-11e9-9599-f6856e8bdaad.png">
+
 
 ## Technologies
 
@@ -54,3 +62,7 @@ Learning is incremental and you can grow a little bit at a time and suddenly rea
 ### Everything else:
 
 The Unlicense (aka: public domain)
+
+### Authors
+
+- Vaibhav Magon
