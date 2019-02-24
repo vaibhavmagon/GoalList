@@ -7,6 +7,10 @@ Learning is incremental and you can grow a little bit at a time and suddenly rea
 
 ## Screenshots
 
+<img width="735" alt="screen shot 2019-02-24 at 8 45 10 pm" src="https://user-images.githubusercontent.com/5276190/53301164-4f0b9900-3875-11e9-85fa-f91e4c07947f.png">
+
+<img width="681" alt="screen shot 2019-02-24 at 8 45 17 pm" src="https://user-images.githubusercontent.com/5276190/53301163-4e730280-3875-11e9-938b-216999cff91e.png">
+
 <img width="533" alt="screen shot 2019-02-24 at 8 38 33 pm" src="https://user-images.githubusercontent.com/5276190/53301089-ba08a000-3874-11e9-88fb-3c61330ea244.png">
 
 <img width="549" alt="screen shot 2019-02-24 at 8 38 29 pm" src="https://user-images.githubusercontent.com/5276190/53301090-baa13680-3874-11e9-9b52-fd924ac53698.png">
