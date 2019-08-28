@@ -1,8 +1,8 @@
-# GoaList
+# GoalList
 
-GoaList is an online goal achieveing community of people where they share milestones, set targets, achieve goals and get rewarded by closed ones! It is based on the idea that - "people have known for years that making a list of goals is the best way to achieve them. Why is that? Getting your goals in writing can help you clarify what you really want to do. You might find you have some important goals.”
+GoalList is an online goal achieveing community of people where they share milestones, set targets, achieve goals and get rewarded by closed ones! It is based on the idea that - "people have known for years that making a list of goals is the best way to achieve them. Why is that? Getting your goals in writing can help you clarify what you really want to do. You might find you have some important goals.”
 
-Learning is incremental and you can grow a little bit at a time and suddenly realize you're competent in something new. It's a way of engaging in life itself. The milestone is to let you make your list, edit it, get inspired and share your progress. As you achieve a goal you've listed you can click on the "I've Achieved" button and share Anecdote about how you did it. GoaList is exactly that platform that helps people accomplish & get reward when they achieve goals.
+Learning is incremental and you can grow a little bit at a time and suddenly realize you're competent in something new. It's a way of engaging in life itself. The milestone is to let you make your list, edit it, get inspired and share your progress. As you achieve a goal you've listed you can click on the "I've Achieved" button and share Anecdote about how you did it. GoalList is exactly that platform that helps people accomplish & get reward when they achieve goals.
 
 
 ## Screenshots
